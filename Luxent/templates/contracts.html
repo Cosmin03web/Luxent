@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container">
+        <div class="row mt-5 pt-5"></div>
+        <div class="row mt-3 pt-3">
+            <table class="table rounded">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Contract Number</th>
+                        <th>Contract Made Date</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Price Per Day</th>
+                        <th>Days</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Display every contract-->
+                    {% for contract in contracts %}
+                    <tr>
+                        <td>{{ contract.id }}</td>
+                        <td>{{ contract.first_name }}</td>
+                        <td>{{ contract.last_name }}</td>
+                        <td>{{ contract.phone_number }}</td>
+                        <td>{{ contract.contract_number }}</td>
+                        <td>{{ contract.contract_made_date }}</td>
+                        <td>{{ contract.start_date }}</td>
+                        <td>{{ contract.end_date }}</td>
+                        <td>${{ contract.price_per_day}}</td>
+                        <td>{{ contract.days }}</td>
+                        <td>${{ contract.total_price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="/adding_contract" class="btn btn-primary btn-lg border-0">Add Contract</a>
+            <a href="/remove" class="btn btn-primary btn-lg border-0 mt-3">Remove Contract</a>
+        </div>
+        <div class="row mt-4 pt-4"></div>
+    </div>
+{% endblock %}

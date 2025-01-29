@@ -1,0 +1,95 @@
+body{
+    background-color: #1a1919;
+}
+.text-primary{
+    color: #ab8c05 !important;
+}
+
+.navbar {
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand{
+    font-family: "Great Vibes", sans-serif;
+    font-size: 48px;
+}
+
+.header {
+    min-height: 800px;
+    /* Background image from unsplash */
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("/static/images/header_cover.jpg") center center no-repeat;
+    background-size: cover;
+    z-index: -1
+}
+
+.hovering:hover{
+    color: #ab8c05;
+}
+
+h1{
+    font-family: "Great Vibes", sans-serif;
+}
+
+.btn-primary{
+    background-color: #ab8c05;
+    color: white;
+}
+
+.btn-primary:hover{
+    background-color: white;
+    color: #ab8c05;
+}
+
+.btn-primary:active{
+    background-color: white !important;
+    color: #ab8c05 !important;
+}
+
+.btn-outline-primary{
+    border-color: #ab8c05;
+    color: #ab8c05;
+}
+
+.btn-outline-primary:hover{
+    background-color: #ab8c05;
+    color: white;
+    border-color: #ab8c05;
+}
+
+.btn-outline-primary:active{
+    background-color: #ab8c05 !important;
+    color: white !important;
+    border-color: #ab8c05 !important;
+};
+
+.details{
+    min-height: 600px;
+}
+
+.details p{
+    text-align: justify;
+}
+
+.main-img{
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #181a1a;
+    height: 90%;
+    z-index: 1;
+}
+
+.reviews{
+    min-height: 600px;
+}
+
+.review{
+    background-color: #ab8c05;
+    border-radius: 10px;
+}
+
+h3{
+    font-family: "Great Vibes", sans-serif;
+}
+
+i{
+    color: #ab8c05;
+}

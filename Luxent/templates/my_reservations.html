@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container">
+        <div class="row mt-3 pt-3"></div>
+        <div class="row my-5 py-5">
+            <table class="table rounded">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Reservation Made Date</th>
+                        <th>Vehicle ID</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Days</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Display every reservation-->
+                    {% for reservation in reservations %}
+                    <tr>
+                        <td>{{ reservation.id }}</td>
+                        <td>{{ reservation.first_name }}</td>
+                        <td>{{ reservation.last_name }}</td>
+                        <td>{{ reservation.phone_number }}</td>
+                        <td>{{ reservation.vehicle_id }}</td>
+                        <td>{{ reservation.reservation_made_date}}</td>
+                        <td>{{ reservation.start_date }}</td>
+                        <td>{{ reservation.end_date }}</td>
+                        <td>{{ reservation.days }}</td>
+                        <td>${{ reservation.total_price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="row my-3 py-3"></div>
+    </div>
+{% endblock %}

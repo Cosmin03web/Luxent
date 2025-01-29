@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container text-white">
+        <div class="row mt-3 pt-3"></div>
+        <div class="row my-4 py-4">
+            <div class="col-12 mt-4 pt-4">
+                <form action="/reservations" method="post">
+                    <h2 class="my-5">Select one preference:</h2>
+                    <div class="d-flex flex-row justify-content-evenly align-items-baseline">
+                        <div>
+                            <h4>Engine Type:</h4>
+                            <!--Display every engin type-->
+                            {% for engine in engine_types %}
+                                <div>
+                                    <input type="radio" class="form-check-input" name="engine_type[]" value="{{ engine.engine_type }}">
+                                    <label>{{ engine.engine_type }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div>
+                            <h4>Color:</h4>
+                            <!--Display every color-->
+                            {% for color in colors %}
+                                <div>
+                                    <input type="radio" class="form-check-input" name="color[]" value="{{ color.color_name }}">
+                                    <label>{{ color.color_name }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div>
+                            <h4>Car Type:</h4>
+                            <!--Display every car type-->
+                            {% for car_type in car_types %}
+                                <div>
+                                    <input type="radio" class="form-check-input" name="car_type[]" value="{{ car_type.car_type }}">
+                                    <label>{{ car_type.car_type }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary mt-3 border-0" value="Filter">
+                </form>
+            </div>
+        </div>
+        <div class="row my-3 py-3">
+            {% for car in cars %}
+                <div class="col-md-4 text-center mb-5">
+                    <h4 class="text-primary">{{ car.make }} - {{ car.model }}</h4>
+                    <p>Vehicle ID: {{ car.id }}</p>
+                    <p>Engine: {{ car.engine_type }}</p>
+                    <p>Car Type: {{car.car_type}}</p>
+                    <p>Color: {{car.color}}</p>
+                    <p>Price per day: ${{car.price_per_day}}</p>
+                    <a class="btn btn-primary border-0" href="/make_reservation">Reserve</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row mb-3"></div>
+    </div>
+{% endblock %}

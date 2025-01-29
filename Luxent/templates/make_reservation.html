@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container text-white text-start">
+        <div class="row mt-5 pt-5"></div>
+        <div class="row mt-4 pt-4">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form action="/make_reservation" method="post">
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="John">
+                    </div>
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Doe">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone_number" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="0232-123-456">
+                    </div>
+                    <div class="mb-3">
+                        <label for="vehicle_id" class="form-label">Vehicle ID</label>
+                        <input type="text" class="form-control" name="vehicle_id" id="vehicle_id" placeholder="Ex: 1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="start_date" class="form-label">Start Date</label>
+                        <input type="text" class="form-control" name="start_date" id="start_date" placeholder="YYYY-MM-DD">
+                    </div>
+                    <div class="mb-3">
+                        <label for="end_date" class="form-label">End Date</label>
+                        <input type="text" class="form-control" name="end_date" id="end_date" placeholder="YYYY-MM-DD">
+                    </div>
+                    <button type="submit" class="btn btn-primary border-0 btn-lg">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row mt-4 pt-4"></div>
+    </div>
+{% endblock %}
